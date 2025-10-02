@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { db } from "../../db/index";
 import { productsTable } from "../../db/productsSchema";
 import { eq } from "drizzle-orm";
+import { createProductSchema } from ".";
 
 export async function listProducts(req: Request, res: Response) {
   try {
