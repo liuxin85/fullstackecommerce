@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { db } from "../../db/index";
 import { productsTable } from "../../db/productsSchema";
 import { eq } from "drizzle-orm";
-import { createProductSchema } from ".";
 
 export async function listProducts(req: Request, res: Response) {
   try {
@@ -34,6 +33,7 @@ export async function getProductById(req: Request, res: Response) {
 
 export async function createProduct(req: Request, res: Response) {
   try {
+    console.log(req.userId);
     const [product] = await db
       .insert(productsTable)
       .values(req.body)
