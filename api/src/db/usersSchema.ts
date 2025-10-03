@@ -1,5 +1,5 @@
 import { pgTable, integer, varchar, text } from "drizzle-orm/pg-core";
-import { createInsertSchema, createUpdateSchema } from "drizzle-zod";
+import { createInsertSchema } from "drizzle-zod";
 
 export const usersTable = pgTable("users", {
   id: integer().primaryKey().generatedByDefaultAsIdentity(),
